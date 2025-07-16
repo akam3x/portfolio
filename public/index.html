@@ -15,6 +15,20 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <style>
+     df-messenger {
+       z-index: 999;
+       position: fixed;
+       --df-messenger-font-color: #000;
+       --df-messenger-font-family: Google Sans;
+       --df-messenger-chat-background: #f3f6fc;
+       --df-messenger-message-user-background: #d3e3fd;
+       --df-messenger-message-bot-background: #fff;
+       bottom: 16px;
+       right: 16px;
+     }
+    </style>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,6 +41,16 @@
     <title>React App</title>
   </head>
   <body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <df-messenger
+      project-id="mythri-457118"
+     agent-id="c4d0d907-c852-4280-ad70-03e278367ca0"
+     language-code="en"
+     max-query-length="-1">
+     <df-messenger-chat-bubble
+       chat-title="VR Resume Bot">
+     </df-messenger-chat-bubble>
+    </df-messenger>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
